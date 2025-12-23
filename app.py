@@ -5,6 +5,11 @@ from openai import OpenAI
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
+if "OPENAI_API_KEY" not in st.secrets:
+    st.error("❌ OpenAI API key not found in Streamlit Secrets")
+    st.stop()
+
+
 st.set_page_config(page_title="StudyBuddy AI", page_icon="🤖")
 
 if "logged_in" not in st.session_state:
