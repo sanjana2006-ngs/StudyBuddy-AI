@@ -3,7 +3,7 @@ import time
 import os
 from openai import OpenAI
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key="YOUR_API_KEY")
 
 if "OPENAI_API_KEY" not in st.secrets:
     st.error("❌ OpenAI API key not found in Streamlit Secrets")
